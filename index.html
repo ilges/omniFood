@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="vendors/css/normalize.css">
         <link rel="stylesheet" type="text/css" href="vendors/css/grid.css">
+
         <link rel="stylesheet" type="text/css" href="Resources/css/style.css">
+        <link rel="stylesheet" type="text/css" href="Resources/css/queries.css">
+        
         <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,300&display=swap" rel="stylesheet">
         
 
@@ -15,6 +19,7 @@
             <nav>
                 <div class="row">
                     <img src="resources/images/logo-white.png" alt="Omnifood logo" class="logo"/>
+                    <img src="resources/images/logo.png" alt="Omnifood logo" class="logo-black"/>
                     <ul class="main-nav">
                         <li><a href="#">Food delivery</a></li>
                         <li><a href="#">How it works</a></li>
@@ -30,7 +35,7 @@
             </div>
         </header>
     
-        <section>
+        <section class="js--section-features">
             <div class="row">
                 <h2>Get food fast &mdash; not fast food.</h2>
                 <p class="long-copy long1">
@@ -129,23 +134,23 @@
                     <img src="resources/images/app-iPhone.png" alt="omnifood app on iphone" class="app-screen"/>
                 </div>
                 
-                <div class="col span1-of-2 steps-box">
+                <div class="col span-1-of-2 steps-box">
                     <div class="works-step">
                         <div>1</div>
                         <p>
-                            Choose the subscription plan that best fits<br>your needs and sign up today.
+                            Choose the subscription plan that best fits your needs and sign up today.
                         </p>
                     </div>
                     <div class="works-step">
                         <div>2</div>
                         <p>
-                            Order your delicious meal using our mobile app or website.<br>Or you can even call us!
+                            Order your delicious meal using our mobile app or website. Or you can even call us!
                         </p>
                     </div>
                     <div class="works-step">
                         <div>3</div>
                         <p>
-                            Enjoy your meal after less than 20 minutes.<br>See you the next time!
+                            Enjoy your meal after less than 20 minutes. See you the next time!
                         </p>
                     </div>
                     <a href="#" class="btn-app"><img src="Resources/images/download-app-android.png"/></a>
@@ -418,7 +423,10 @@
             </div>
         </footer>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    <script src="vendors/js/jquery.waypoints.min.js"></script>
+    <script src="Resources/js/scrip.js"></script>
     </body>
 </html>
 

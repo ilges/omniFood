@@ -11,10 +11,12 @@ html{
     font-size: 20px;
     font-weight: 300;
     text-rendering: optimizeLegibility;
+    overflow-x: hidden;
 }
 
 .clearfix{zoom:1}
-.clearfix:after{
+
+.clearfix::after{
     content: '.';
     clear: both;
     display: block;
@@ -75,6 +77,7 @@ h2:after{
 -------------------------------------------------------*/
 
 header{
+    background-image: -webkit-gradient(linear,left top, left bottom,from(rgba(0,0,0,0.3)),to(rgba(0,0,0,0.5))), url(images/hero.jpg);
     background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.5)), url(images/hero.jpg);
     background-attachment: fixed;
     height: 100vh;
@@ -88,7 +91,8 @@ header{
     width: 1140px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
     
     
 }
@@ -108,6 +112,7 @@ header{
     color: #fff;
     border:1px solid #e67e22;
     margin-top: 20px;
+    -webkit-transition: background-color 0.1s, border 0.1s, color 0.1s;
     transition: background-color 0.1s, border 0.1s, color 0.1s;
 }
 
@@ -141,6 +146,16 @@ header{
     margin-top: 20px;
 }
 
+.logo-black{
+    height: 50px;
+    width: auto;;
+    float: left;
+    margin: 5px 0;
+  
+}
+
+.logo-black{display: none;}
+
 .main-nav{
     float: right;
     list-style: none;
@@ -159,6 +174,7 @@ header{
     text-transform: uppercase;
     font-size: 80%;
     border-bottom: 2px solid #e67e22 transparent;
+    -webkit-transition: border 0.2s;
     transition: border 0.2s;
     padding: 5px 0px;
 }
@@ -170,6 +186,29 @@ header{
 
 }
 
+/* stick navigation*/
+.sticky{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    z-index: 99;
+
+}
+
+.sticky .main-nav li a:link,
+.sticky .main-nav li a:visited{
+
+    color:#555;
+
+    padding: 18px 0px;
+}
+
+.sticky .main-nav{margin-top: 18px;}
+.sticky .logo {display: none;}
+.sticky .logo-black{display: block;}
 
 /*-------------------------------------------------------
     PARAGRAPHS
@@ -228,15 +267,21 @@ header{
 
 .meal-photos img{
     width: 100%;
-    transform: scale(1.3);
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+    -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: -webkit-transform 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
     transition: transform 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: transform 0.2s cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+    -webkit-transition: opacity 0.2 ease;
     transition: opacity 0.2 ease;
     opacity: 0.5;
     
 }
 
 .meal-photos img:hover{
-    transform: scale(1.03);
+    -webkit-transform: scale(1.03);
+            transform: scale(1.03);
     opacity: 1;
 }
 
@@ -247,6 +292,8 @@ header{
 .section-steps{
     background-color:#f5f5f5 ;
 }
+
+
 
 .steps-box:first-child{
     text-align: right;
@@ -268,10 +315,12 @@ header{
     margin-bottom: 50px;
 }
 
+.works-step p{
+    width: 95%;
+}
 .works-step div{
     color: #e67e22;
     border: 2px solid #e67e22;
-    display: inline-block;   
     height: 50px; 
     width: 50px;
     border-radius: 50%;
@@ -294,8 +343,7 @@ header{
 /*-------------------------------------------------------
     CITIES
 -------------------------------------------------------*/
-.section-cities{
-}
+
 
 .cities-col{
     width: 20%;
@@ -317,17 +365,18 @@ header{
     font-size: 20px;
     color: #e67e22;
     margin-right: 20px;
-    display: inline-block;
+    /*display: inline-block;*/
     margin-top: 3px;
    
     
 }
 .cities-col a:link, .cities-col a:visited{
-    float: left;
+    /*float: left;*/
     display: inline-block;
     text-decoration: none;
     color: #e67e22;
     border-bottom: 1px solid #e67e22;
+    -webkit-transition: color  0.2s, border 0.2s;
     transition: color  0.2s, border 0.2s;
 }
 .cities-col a:hover{
@@ -342,6 +391,7 @@ header{
     TESTIMONIALS
 -------------------------------------------------------*/
 .section-testimonials{
+    background-image: -webkit-gradient(linear,left top, left bottom,from(rgba(0,0,0,0.8)),to(rgba(0,0,0,0.5))), url(images/back-customers.jpg);
     background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.5)), url(images/back-customers.jpg);
     background-size: cover;
     background-position: center;
@@ -458,8 +508,7 @@ cite img{
     CONTEACT FORM
 -------------------------------------------------------*/
 
-.section-form{
-}
+
 .contact-form{
     width: 60%;
     margin: 0 auto;
@@ -517,6 +566,7 @@ footer li a:link, footer li a:visited{
     text-decoration: none;
     border: 0;
     color: #888;
+    -webkit-transition: color 0.2s;
     transition: color 0.2s;
 }
 
@@ -536,3 +586,5 @@ footer p{
     margin-top: 40px;
     margin-bottom: 20px;
 }
+
+
